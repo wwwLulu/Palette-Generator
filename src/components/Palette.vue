@@ -4,7 +4,7 @@
             <img
                 @load="generatePalette"
                 class="img"
-                :src="googleProxy + imageURL"
+                :src="googleProxy + imageUrl"
                 crossorigin="anonymous"
                 ref="img"
                 alt=""
@@ -25,10 +25,9 @@
 import ColorThief from 'colorthief'
 
 export default {
+    props: ['imageUrl'],
     data() {
         return {
-            imageURL:
-                'https://i.pinimg.com/originals/34/09/2a/34092a9f367cc25e2b3ddd222aedcb07.jpg',
             googleProxy:
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }

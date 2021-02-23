@@ -1,18 +1,28 @@
 <template>
     <div class="card">
-        <form action="#">
-            <input type="text" placeholder="Whats the Vibe?" />
-            <button>Get Palette</button>
-        </form>
-        <Palette />
+        <Search @imageToDisplay="imageToDisplay" />
+        <Palette :imageUrl="imageURL" />
     </div>
 </template>
 
 <script>
 import Palette from '@/components/Palette'
+import Search from '@/components/Search'
+
 export default {
     components: {
         Palette,
+        Search,
+    },
+    data() {
+        return {
+            imageURL: '',
+        }
+    },
+    methods: {
+        imageToDisplay(url) {
+            this.imageURL = url
+        },
     },
 }
 </script>
@@ -44,37 +54,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-button {
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.4rem;
-    border-radius: 1rem;
-    background: darken(#fff6e2, 20);
-    margin-left: 0.5rem;
-    padding: 1.4rem 1.6rem;
-    border: none;
-}
-
-input {
-    letter-spacing: 0.1rem;
-    border-radius: 1rem;
-    padding-left: 1.5rem;
-    font-size: 1.6rem;
-    font-weight: thin;
-    height: 4.5rem;
-    min-width: 30rem;
-    margin-bottom: 2rem;
-    // color: darken(#fff6e2, 50);
-
-    &::placeholder {
-        color: darken(#fff6e2, 50);
-    }
-    border: none;
-    border: solid 1px black;
-    // border-color: darken(#fff6e2, 10);
-    outline: none;
 }
 
 .card {
