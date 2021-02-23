@@ -3,6 +3,16 @@
         <div class="img__container">
             <img
                 @load="generatePalette"
+                class="backdrop"
+                :src="
+                    imageUrl ? googleProxy + imageUrl : googleProxy + imageURL
+                "
+                crossorigin="anonymous"
+                ref="img"
+                alt=""
+            />
+            <img
+                @load="generatePalette"
                 class="img"
                 :src="
                     imageUrl ? googleProxy + imageUrl : googleProxy + imageURL
@@ -100,6 +110,12 @@ export default {
                     blocks[i].firstChild.style.color = this.invertColor(
                         hexColor
                     )
+                    if (i == 0) {
+                        document.documentElement.style.setProperty(
+                            '--color-secondary',
+                            this.invertColor(hexColor)
+                        )
+                    }
                 }
             } catch (e) {
                 console.log(e)
@@ -110,7 +126,8 @@ export default {
 </script>
 <style scoped lang="scss">
 .blocks {
-    margin-left: 3rem;
+    position: absolute;
+    right: 0rem;
     height: 40rem;
     display: flex;
     flex-direction: column;
@@ -135,6 +152,8 @@ export default {
 }
 
 .img__container {
+    z-index: 500;
+    position: relative;
     min-width: 40rem;
     min-height: 40rem;
     max-width: 40rem;
@@ -142,7 +161,16 @@ export default {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-radius: 1rem;
+    .backdrop {
+        z-index: 1000;
+        position: absolute;
+        top: 2rem;
+        opacity: 0.5;
+        filter: blur(8px);
+    }
     img {
+        position: absolute;
+        z-index: 2000;
         border-radius: inherit;
         width: 100%;
         height: 100%;
@@ -152,7 +180,9 @@ export default {
 }
 
 .image-info {
+    position: relative;
     display: flex;
+    justify-content: space-between;
     margin-left: -9rem;
 }
 </style>

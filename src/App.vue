@@ -1,4 +1,5 @@
 <template>
+    <h1>paletten</h1>
     <div class="card">
         <Search @imageToDisplay="imageToDisplay" />
         <Palette :imageUrl="imageURL" />
@@ -30,6 +31,7 @@ export default {
 <style lang="scss">
 :root {
     --color-primary: #333;
+    --color-secondary: #333;
     --color-card: #fff6e2;
 }
 
@@ -54,6 +56,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h1 {
+    color: var(--color-secondary);
+    letter-spacing: 0.2rem;
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
 }
 
 .card {
