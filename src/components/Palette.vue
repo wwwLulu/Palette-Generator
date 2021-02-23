@@ -4,7 +4,9 @@
             <img
                 @load="generatePalette"
                 class="img"
-                :src="googleProxy + imageUrl"
+                :src="
+                    imageUrl ? googleProxy + imageUrl : googleProxy + imageURL
+                "
                 crossorigin="anonymous"
                 ref="img"
                 alt=""
@@ -28,6 +30,8 @@ export default {
     props: ['imageUrl'],
     data() {
         return {
+            imageURL:
+                'https://i.pinimg.com/originals/62/8d/8b/628d8befbb4550a0c44cbbc91b287ee2.jpg',
             googleProxy:
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }

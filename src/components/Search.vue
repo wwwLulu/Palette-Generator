@@ -1,10 +1,6 @@
 <template>
     <form action="#">
-        <input
-            v-model="imageUrl"
-            type="text"
-            placeholder="Share the image path!"
-        />
+        <input v-model="imageUrl" type="text" placeholder="Share image URL!" />
         <button @click="getPaletteFromURL">Get Palette</button>
     </form>
 </template>
