@@ -28,7 +28,7 @@ export default {
     data() {
         return {
             imageURL:
-                'https://img3.gelbooru.com//samples/14/cd/sample_14cdbddcd196d14980f51319da58c722.jpg',
+                'https://i.pinimg.com/originals/34/09/2a/34092a9f367cc25e2b3ddd222aedcb07.jpg',
             googleProxy:
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }

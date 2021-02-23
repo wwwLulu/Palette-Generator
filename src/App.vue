@@ -58,21 +58,22 @@ button {
 }
 
 input {
+    letter-spacing: 0.1rem;
     border-radius: 1rem;
-    padding-left: 0.5rem;
-    font-size: 1.4rem;
-    font-weight: bold;
+    padding-left: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: thin;
     height: 4.5rem;
     min-width: 30rem;
     margin-bottom: 2rem;
-    color: darken(#fff6e2, 50);
+    // color: darken(#fff6e2, 50);
 
     &::placeholder {
         color: darken(#fff6e2, 50);
     }
     border: none;
-    border: solid 2px;
-    border-color: darken(#fff6e2, 10);
+    border: solid 1px black;
+    // border-color: darken(#fff6e2, 10);
     outline: none;
 }
 
