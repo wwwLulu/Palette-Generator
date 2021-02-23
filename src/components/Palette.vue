@@ -1,6 +1,6 @@
 <template>
     <section class="image-info">
-        <div class="img__container">
+        <div class="img__container" ref="imgContainer">
             <img
                 @load="generatePalette"
                 class="backdrop"
@@ -46,6 +46,7 @@ export default {
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }
     },
+
     methods: {
         convertToHex(color) {
             let hex = color.toString(16)

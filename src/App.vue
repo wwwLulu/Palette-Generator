@@ -23,6 +23,20 @@ export default {
             imageURL: '',
         }
     },
+    watch: {
+        imageURL() {
+            setTimeout(() => {
+                document
+                    .querySelector('.img__container')
+                    .classList.add('bounce')
+            }, 0)
+            setTimeout(() => {
+                document
+                    .querySelector('.img__container')
+                    .classList.remove('bounce')
+            }, 3000)
+        },
+    },
     methods: {
         imageToDisplay(url) {
             this.imageURL = url
@@ -80,6 +94,11 @@ h1 {
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     background-color: var(--color-card);
     border-radius: 1rem;
+}
+
+.bounce {
+    transition: all 0.5s;
+    animation: fall-bound 1s cubic-bezier(0.94, 0.01, 1, 1) 0.15s forwards;
 }
 
 @keyframes Bounce {
