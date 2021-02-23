@@ -1,14 +1,13 @@
 <template>
     <div class="card">
         <form action="#">
-            <input type="text" />
+            <input type="text" placeholder="Whats the Vibe?" />
             <button>Get Palette</button>
         </form>
         <Palette />
     </div>
 </template>
 
-//
 <script>
 import Palette from '@/components/Palette'
 export default {
@@ -30,10 +29,12 @@ html {
         font-size: 50%;
     }
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
+
 body {
     font-family: Meiryo, sans-serif, monospace;
     background: var(--color-primary);
@@ -46,18 +47,33 @@ body {
 }
 
 button {
-    margin-left: 1rem;
-    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    background: darken(#fff6e2, 20);
+    margin-left: 0.5rem;
+    padding: 1.4rem 1.6rem;
     border: none;
 }
 
 input {
+    border-radius: 1rem;
     padding-left: 0.5rem;
     font-size: 1.4rem;
     font-weight: bold;
-    height: 4rem;
+    height: 4.5rem;
     min-width: 30rem;
     margin-bottom: 2rem;
+    color: darken(#fff6e2, 50);
+
+    &::placeholder {
+        color: darken(#fff6e2, 50);
+    }
+    border: none;
+    border: solid 2px;
+    border-color: darken(#fff6e2, 10);
+    outline: none;
 }
 
 .card {

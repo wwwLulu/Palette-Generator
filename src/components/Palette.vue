@@ -28,7 +28,7 @@ export default {
     data() {
         return {
             imageURL:
-                'https://danbooru.me/data/sample/__ag_2c_sirene_last_origin_drawn_by_paintale__sample-72a67acf169f6337687fe5d01f325714.jpg',
+                'https://img3.gelbooru.com//samples/14/cd/sample_14cdbddcd196d14980f51319da58c722.jpg',
             googleProxy:
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }
@@ -134,6 +134,8 @@ export default {
 .img__container {
     min-width: 40rem;
     min-height: 40rem;
+    max-width: 40rem;
+    max-height: 40rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-radius: 1rem;
