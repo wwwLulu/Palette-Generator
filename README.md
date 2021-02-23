@@ -1,4 +1,5 @@
-# palette
+# paletten
+<img src='https://i.ibb.co/GQ7hymy/Screen-Shot-2021-02-23-at-3-18-15-PM.png'>
 
 ## Project setup
 ```
