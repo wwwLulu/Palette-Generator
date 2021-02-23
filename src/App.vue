@@ -4,16 +4,19 @@
         <Search @imageToDisplay="imageToDisplay" />
         <Palette :imageUrl="imageURL" />
     </div>
+    <Info />
 </template>
 
 <script>
 import Palette from '@/components/Palette'
 import Search from '@/components/Search'
+import Info from '@/components/Info'
 
 export default {
     components: {
         Palette,
         Search,
+        Info,
     },
     data() {
         return {
