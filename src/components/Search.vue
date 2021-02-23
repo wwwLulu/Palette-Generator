@@ -1,21 +1,41 @@
 <template>
     <form action="#">
-        <input v-model="imageUrl" type="text" placeholder="Share image URL!" />
+        <input v-model="query" type="text" placeholder="what's your vibe" />
         <button @click="getPaletteFromURL">palette</button>
     </form>
 </template>
 
 <script>
+import config from '@/config.json'
+
 export default {
     emits: ['imageToDisplay'],
     data() {
         return {
-            imageUrl: '',
+            query: '',
+            image: '',
         }
     },
     methods: {
-        getPaletteFromURL() {
-            this.$emit('imageToDisplay', this.imageUrl)
+        async getPaletteFromURL() {
+            var API_KEY = process.env.apikey || config.API_KEY
+            var URL =
+                'https://pixabay.com/api/?key=' +
+                API_KEY +
+                '&q=' +
+                encodeURIComponent(this.query) +
+                '&image_type=photo'
+            try {
+                const data = await fetch(URL)
+                const res = await data.json()
+
+                //Get random image
+                let imageNum = Math.floor(Math.random() * res.hits.length)
+                this.image = res.hits[imageNum].largeImageURL
+                this.$emit('imageToDisplay', this.image)
+            } catch (e) {
+                console.log(e)
+            }
         },
     },
 }
