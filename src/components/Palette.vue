@@ -133,7 +133,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     &:hover .block__hex {
-        visibility: visible;
+        opacity: 1;
     }
 }
 
@@ -147,11 +147,15 @@ export default {
     font-weight: bold;
     font-size: 1.2rem;
     &__hex {
-        visibility: hidden;
+        transition: all 0.3s;
+        opacity: 0;
     }
 }
 
 .img__container {
+    &:hover {
+        transform: scale(1.05);
+    }
     z-index: 500;
     position: relative;
     min-width: 40rem;
@@ -161,6 +165,9 @@ export default {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-radius: 1rem;
+    animation: fall-bound 1s cubic-bezier(0.94, 0.01, 1, 1) 0.15s forwards;
+    transition: all 0.3s ease-out;
+
     .backdrop {
         z-index: 1000;
         position: absolute;
@@ -175,7 +182,7 @@ export default {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: top;
     }
 }
 

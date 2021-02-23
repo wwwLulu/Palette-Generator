@@ -32,6 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Capriola&display=swap');
 :root {
     --color-primary: #333;
     --color-secondary: #333;
@@ -62,6 +63,7 @@ body {
 }
 
 h1 {
+    font-family: 'Alatsi', sans-serif;
     color: var(--color-secondary);
     letter-spacing: 0.2rem;
     position: absolute;
@@ -78,5 +80,52 @@ h1 {
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     background-color: var(--color-card);
     border-radius: 1rem;
+}
+
+@keyframes Bounce {
+    10% {
+        transform: scale(0.96);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fall-bound {
+    0% {
+        transform: translateY(-200%) scaleX(1) scaleY(1);
+        opacity: 0;
+    }
+    40% {
+        transform: translateY(0%) scaleX(1.6) scaleY(0.8);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-6%) scaleX(1) scaleY(1);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(0%) scaleX(1.3) scaleY(0.9);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-3%) scaleX(1) scaleY(1);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(0%) scaleX(1.15) scaleY(0.95);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(-1.5%) scaleX(1) scaleY(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%) scaleX(1) scaleY(1);
+        opacity: 1;
+    }
 }
 </style>
