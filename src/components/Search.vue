@@ -1,4 +1,5 @@
 <template>
+    <Loader v-show="searching" />
     <form v-show="!searching" action="#">
         <input v-model="query" type="text" placeholder="what's your vibe" />
         <button @click="getImage">palette</button>
@@ -7,18 +8,24 @@
 
 <script>
 import config from '@/config.json'
+import Loader from '@/components/Loader.vue'
 
 export default {
-    emits: ['imageToDisplay'],
+    props: ['searching'],
+    emits: ['loaderEnabled'],
+    components: {
+        Loader,
+    },
+    emits: ['imageToDisplay', 'loaderEnabled'],
     data() {
         return {
             query: '',
             image: '',
-            searching: false,
         }
     },
     methods: {
         async getImage() {
+            this.$emit('loaderEnabled')
             var API_KEY = process.env.apikey || config.API_KEY
             var URL =
                 'https://pixabay.com/api/?key=' +

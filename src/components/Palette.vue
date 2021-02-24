@@ -2,7 +2,6 @@
     <section class="image-info">
         <div class="img__container" ref="imgContainer">
             <img
-                @load="generatePalette"
                 class="backdrop"
                 :src="
                     imageUrl ? googleProxy + imageUrl : googleProxy + imageURL
@@ -38,6 +37,7 @@ import ColorThief from 'colorthief'
 
 export default {
     props: ['imageUrl'],
+    emits: ['loaderDisabled'],
     data() {
         return {
             imageURL:
@@ -84,6 +84,7 @@ export default {
             return (zeros + str).slice(-len)
         },
         generatePalette() {
+            this.$emit('loaderDisabled')
             try {
                 const img = document.querySelector('img')
                 const blocks = document.querySelectorAll('.block')
@@ -116,6 +117,44 @@ export default {
                             '--color-secondary',
                             this.invertColor(hexColor)
                         )
+                    }
+                    switch (i) {
+                        case 0:
+                            document.documentElement.style.setProperty(
+                                '--color-0',
+                                hexColor
+                            )
+                            break
+                        case 1:
+                            document.documentElement.style.setProperty(
+                                '--color-1',
+                                hexColor
+                            )
+                            break
+                        case 2:
+                            document.documentElement.style.setProperty(
+                                '--color-2',
+                                hexColor
+                            )
+                            break
+                        case 3:
+                            document.documentElement.style.setProperty(
+                                '--color-3',
+                                hexColor
+                            )
+                            break
+                        case 4:
+                            document.documentElement.style.setProperty(
+                                '--color-4',
+                                hexColor
+                            )
+                            break
+                        case 5:
+                            document.documentElement.style.setProperty(
+                                '--color-5',
+                                hexColor
+                            )
+                            break
                     }
                 }
             } catch (e) {

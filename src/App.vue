@@ -1,8 +1,12 @@
 <template>
     <h1>paletten</h1>
     <div class="card">
-        <Search @imageToDisplay="imageToDisplay" />
-        <Palette :imageUrl="imageURL" />
+        <Search
+            @imageToDisplay="imageToDisplay"
+            :searching="searching"
+            @loaderEnabled="loaderEnabled"
+        />
+        <Palette :imageUrl="imageURL" @loaderDisabled="loaderDisabled" />
     </div>
     <Info />
 </template>
@@ -21,6 +25,7 @@ export default {
     data() {
         return {
             imageURL: '',
+            searching: false,
         }
     },
     watch: {
@@ -41,6 +46,12 @@ export default {
         imageToDisplay(url) {
             this.imageURL = url
         },
+        loaderEnabled() {
+            this.searching = true
+        },
+        loaderDisabled() {
+            this.searching = false
+        },
     },
 }
 </script>
@@ -51,6 +62,12 @@ export default {
     --color-primary: #333;
     --color-secondary: #333;
     --color-card: #fff6e2;
+    --color-0: #fff;
+    --color-1: #fff;
+    --color-2: #fff;
+    --color-3: #fff;
+    --color-4: #fff;
+    --color-5: #fff;
 }
 
 html {
