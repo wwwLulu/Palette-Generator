@@ -48,6 +48,9 @@ export default {
         },
         loaderEnabled() {
             this.searching = true
+            setTimeout(() => {
+                this.searching = false
+            }, 4500)
         },
         loaderDisabled() {
             this.searching = false
@@ -73,7 +76,7 @@ export default {
 html {
     font-size: 62.5%;
     @media (max-width: 650px) {
-        font-size: 50%;
+        font-size: 40%;
     }
 }
 

@@ -22,12 +22,24 @@
             />
         </div>
         <div class="blocks">
-            <div class="block"><p class="block__hex"></p></div>
-            <div class="block"><p class="block__hex"></p></div>
-            <div class="block"><p class="block__hex"></p></div>
-            <div class="block"><p class="block__hex"></p></div>
-            <div class="block"><p class="block__hex"></p></div>
-            <div class="block"><p class="block__hex"></p></div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
+            <div @click="copyToClipboard" class="block">
+                <p class="block__hex"></p>
+            </div>
         </div>
     </section>
 </template>
@@ -46,8 +58,8 @@ export default {
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }
     },
-
     methods: {
+        copyToClipboard() {},
         convertToHex(color) {
             let hex = color.toString(16)
             return hex.length == 1 ? '0' + hex : hex
