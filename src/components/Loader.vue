@@ -12,6 +12,7 @@
 <style lang="scss" scoped>
 .dots {
     display: flex;
+    margin-bottom: 2rem;
 }
 .dot {
     min-width: 1.2rem;
