@@ -2,7 +2,7 @@
     <Loader v-show="searching" />
     <form v-show="!searching" action="#">
         <input v-model="query" type="text" placeholder="what's your vibe" />
-        <button @click="getImage">palette</button>
+        <button @click.prevent="getImage">palette</button>
     </form>
 </template>
 
