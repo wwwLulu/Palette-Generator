@@ -1,7 +1,7 @@
 <template>
-    <form action="#">
+    <form v-show="!searching" action="#">
         <input v-model="query" type="text" placeholder="what's your vibe" />
-        <button @click="getPaletteFromURL">palette</button>
+        <button @click="getImage">palette</button>
     </form>
 </template>
 
@@ -14,10 +14,11 @@ export default {
         return {
             query: '',
             image: '',
+            searching: false,
         }
     },
     methods: {
-        async getPaletteFromURL() {
+        async getImage() {
             var API_KEY = process.env.apikey || config.API_KEY
             var URL =
                 'https://pixabay.com/api/?key=' +
