@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import config from '@/config.json'
+// import config from '@/config.json'
 import Loader from '@/components/Loader.vue'
 
 export default {
@@ -26,7 +26,7 @@ export default {
     methods: {
         async getImage() {
             this.$emit('loaderEnabled')
-            var API_KEY = process.env.apikey || config.API_KEY
+            var API_KEY = process.env.apikey
             var URL =
                 'https://pixabay.com/api/?key=' +
                 API_KEY +
