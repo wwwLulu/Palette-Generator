@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import config from '@/config.json'
 import Loader from '@/components/Loader.vue'
 
 export default {
