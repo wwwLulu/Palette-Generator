@@ -4,7 +4,8 @@
         <i @click="open = false" class="fas fa-times"></i>
         <p>
             Made entirely with Vue.js & Palette generated using ColorThief
-            library
+            library, original site by Angela
+            <a href="https://palette.angelahe.dev">here</a>
         </p>
     </div>
 </template>
