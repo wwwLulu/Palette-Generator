@@ -21,6 +21,8 @@ export default {
 
 <style scoped>
 .info p {
+    max-width: 25rem;
+    line-height: 2 rem;
     position: absolute;
     bottom: 8rem;
     right: 8rem;
