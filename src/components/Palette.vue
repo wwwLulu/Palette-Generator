@@ -53,7 +53,7 @@ export default {
     data() {
         return {
             imageURL:
-                'https://pixabay.com/get/g59ff559444e7a563c8fc98990e3875d34bc6ba6296d34846ddeb1014fa2320cb9d2b218844b682079c978ef5d053e2d8aa38a0ce8e381c385602e1e3fc74008b_1280.jpg',
+                'https://images.pexels.com/photos/1098520/pexels-photo-1098520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             googleProxy:
                 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=',
         }
