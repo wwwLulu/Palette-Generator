@@ -1,12 +1,19 @@
 <template>
     <h1>paletten</h1>
-    <div class="card">
+    <div class="overlay" :class="{ hidden: loaded }">
+        <Loader />
+    </div>
+    <div class="card" :class="{ hidden: !loaded }">
         <Search
             @imageToDisplay="imageToDisplay"
             :searching="searching"
             @loaderEnabled="loaderEnabled"
         />
-        <Palette :imageUrl="imageURL" @loaderDisabled="loaderDisabled" />
+        <Palette
+            @loaded="loaded = true"
+            :imageUrl="imageURL"
+            @loaderDisabled="loaderDisabled"
+        />
     </div>
     <Info />
 </template>
@@ -15,15 +22,18 @@
 import Palette from '@/components/Palette'
 import Search from '@/components/Search'
 import Info from '@/components/Info'
+import Loader from '@/components/Loader'
 
 export default {
     components: {
         Palette,
         Search,
         Info,
+        Loader,
     },
     data() {
         return {
+            loaded: false,
             imageURL: '',
             searching: false,
         }
@@ -103,6 +113,10 @@ h1 {
     position: absolute;
     top: 5rem;
     left: 5rem;
+}
+
+.hidden {
+    display: none;
 }
 
 .card {

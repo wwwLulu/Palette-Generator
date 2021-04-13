@@ -49,9 +49,10 @@ import ColorThief from 'colorthief'
 
 export default {
     props: ['imageUrl'],
-    emits: ['loaderDisabled'],
+    emits: ['loaderDisabled', 'loaded'],
     data() {
         return {
+            loaded: false,
             imageURL:
                 'https://images.pexels.com/photos/1098520/pexels-photo-1098520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             googleProxy:
@@ -172,6 +173,7 @@ export default {
             } catch (e) {
                 console.log(e)
             }
+            this.$emit('loaded')
         },
     },
 }
